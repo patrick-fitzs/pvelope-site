@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -24,6 +24,7 @@ export default function RootLayout({
       <body className={`${jetbrainsMono.variable} font-mono bg-[#0f0f0f] text-[#e0e0e0] overflow-x-hidden`}>
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
