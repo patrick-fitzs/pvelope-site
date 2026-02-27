@@ -2,7 +2,18 @@ import Link from "next/link";
 
 // This is where your travel posts will live.
 // Each entry maps to a photo, location, and eventually an MDX post page.
-const travelPosts = [
+type TravelPost = {
+  slug: string;
+  city: string;
+  country: string;
+  date: string;
+  thumbnail: string;
+  lat: number;
+  lng: number;
+  summary: string;
+};
+
+const travelPosts: TravelPost[] = [
   // Example structure — replace with your real trips:
   // {
   //   slug: "japan-2025",
@@ -42,7 +53,7 @@ export default function TravelsPage() {
       {/* Travel posts grid */}
       {travelPosts.length > 0 ? (
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mb-20">
-          {travelPosts.map((post: any) => (
+          {travelPosts.map((post) => (
             <Link key={post.slug} href={`/travels/${post.slug}`}>
               <div className="project-card bg-[#1e1e1e] rounded-2xl overflow-hidden cursor-pointer">
                 <img src={post.thumbnail} alt={post.city} className="w-full h-52 object-cover" />
