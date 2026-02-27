@@ -19,10 +19,20 @@ const travelPosts: TravelLocation[] = [
     city: "Dublin",
     country: "Ireland",
     date: "Home base",
-    thumbnail: "",
+    thumbnail: "https://res.cloudinary.com/do4ze8iv8/image/upload/w_800,q_auto,f_auto/v1772210742/DJI_20250821000756_0022_D_fhrq9g.jpg",
     lat: 53.3498,
     lng: -6.2603,
     summary: "Where it all starts.",
+  },
+    {
+    slug: "Picture",
+    city: "Honolulu",
+    country: "Hawaii",
+    date: "Good times",
+    thumbnail: "https://res.cloudinary.com/do4ze8iv8/image/upload/w_800,q_auto,f_auto/v1772210742/DJI_20250821000756_0022_D_fhrq9g.jpg",
+    lat: 157.8581,
+    lng: 21.3099,
+    summary: "The most recent travel - August 2025.",
   },
 ];
 
