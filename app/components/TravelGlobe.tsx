@@ -30,7 +30,6 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 800, height: 520 });
 
-  // Build flight arcs between consecutive cities
   const arcs: ArcData[] = locations.slice(0, -1).map((loc, i) => ({
     startLat: loc.lat,
     startLng: loc.lng,
@@ -38,7 +37,6 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
     endLng: locations[i + 1].lng,
   }));
 
-  // Set auto-rotate once globe mounts
   useEffect(() => {
     if (globeRef.current) {
       globeRef.current.controls().autoRotate = true;
@@ -52,14 +50,10 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
     }
   }, [locations]);
 
-  // Responsive sizing
   useEffect(() => {
     const update = () => {
       if (containerRef.current) {
-        setDimensions({
-          width: containerRef.current.offsetWidth,
-          height: 520,
-        });
+        setDimensions({ width: containerRef.current.offsetWidth, height: 520 });
       }
     };
     update();
@@ -77,24 +71,28 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
         ref={globeRef}
         width={dimensions.width}
         height={dimensions.height}
-        globeImageUrl="https://unpkg.com/three-globe/example/img/earth-night.jpg"
+        globeImageUrl="https://unpkg.com/three-globe/example/img/earth-day.jpg"
         backgroundImageUrl="https://unpkg.com/three-globe/example/img/night-sky.png"
-        // Pins
-        pointsData={locations}
-        pointLat="lat"
-        pointLng="lng"
-        pointColor={() => "#00ffe7"}
-        pointAltitude={0.04}
-        pointRadius={0.5}
-        pointLabel={(d) => {
+        // Custom HTML pin markers
+        htmlElementsData={locations}
+        htmlLat="lat"
+        htmlLng="lng"
+        htmlAltitude={0.01}
+        htmlElement={(d) => {
           const loc = d as TravelLocation;
-          return `<div style="background:rgba(0,0,0,0.85);border:1px solid #00ffe7;border-radius:8px;padding:8px 12px;color:#e0e0e0;font-family:monospace;font-size:13px;">
-            <div style="color:#00ffe7;font-weight:bold">${loc.city}</div>
-            <div style="font-size:11px;color:#888">${loc.country} · ${loc.date}</div>
-          </div>`;
+          const el = document.createElement("div");
+          el.style.cssText = "cursor:pointer;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-100%);";
+          el.innerHTML = `
+            <div style="background:rgba(0,0,0,0.85);border:1px solid #00ffe7;border-radius:6px;padding:3px 7px;color:#00ffe7;font-family:monospace;font-size:11px;font-weight:bold;white-space:nowrap;margin-bottom:2px;">${loc.city}</div>
+            <svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 0C4.48 0 0 4.48 0 10C0 17.5 10 28 10 28C10 28 20 17.5 20 10C20 4.48 15.52 0 10 0Z" fill="#00ffe7"/>
+              <circle cx="10" cy="10" r="4" fill="#0f0f0f"/>
+            </svg>
+          `;
+          el.addEventListener("click", () => onPinClick(loc));
+          return el;
         }}
-        onPointClick={(d) => onPinClick(d as TravelLocation)}
-        // Arcs
+        // Arcs between cities
         arcsData={arcs}
         arcColor={() => ["#00ffe7", "#00ffe7"]}
         arcDashLength={0.4}
