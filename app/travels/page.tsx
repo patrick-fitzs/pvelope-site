@@ -4,39 +4,16 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import type { TravelLocation } from "../components/TravelGlobe";
 
+import { travelPosts} from "@/app/travels/travelData";
+
 // Dynamically import globe — disables SSR (Three.js requires browser APIs)
 const TravelGlobe = dynamic(() => import("../components/TravelGlobe"), {
   ssr: false,
 });
 
-// ─── YOUR TRAVEL DATA ────────────────────────────────────────────────────────
-// Add your real trips here. Each one becomes a pin on the globe and a card below.
-// thumbnail: use a Cloudinary URL once you've uploaded your DJI photos.
-const travelPosts: TravelLocation[] = [
-  // Example — replace or add to this:
-  {
-    slug: "example",
-    city: "Dublin",
-    country: "Ireland",
-    date: "Home base",
-    thumbnail: "https://res.cloudinary.com/do4ze8iv8/image/upload/w_800,q_auto,f_auto/v1772210742/DJI_20250821000756_0022_D_fhrq9g.jpg",
-    lat: 53.3498,
-    lng: -6.2603,
-    summary: "Where it all starts.",
-  },
-    {
-    slug: "Picture",
-    city: "Honolulu",
-    country: "Hawaii",
-    date: "Good times",
-    thumbnail: "https://res.cloudinary.com/do4ze8iv8/image/upload/w_800,q_auto,f_auto/v1772210742/DJI_20250821000756_0022_D_fhrq9g.jpg",
-    lat: 157.8581,
-    lng: 21.3099,
-    summary: "The most recent travel - August 2025.",
-  },
-];
 
-// ─── POPUP COMPONENT ─────────────────────────────────────────────────────────
+
+// ─────────────────────────── POPUP COMPONENT ───────────────────────────
 function LocationPopup({
   location,
   onClose,
@@ -93,7 +70,7 @@ export default function TravelsPage() {
       <div className="text-center mb-12">
         <h1 className="text-5xl font-extrabold text-[#00ffe7] mb-4">Travels</h1>
         <p className="text-[#b2ffe9] text-lg max-w-xl mx-auto">
-          Places I&apos;ve been, photos I&apos;ve taken, and things I&apos;ve learned along the way.
+          Places I&apos;ve been, photos I&apos;ve taken.
           Click a pin to explore.
         </p>
       </div>
@@ -104,7 +81,7 @@ export default function TravelsPage() {
           onPinClick={(loc) => setSelected(loc)}
         />
         <p className="text-center text-[#444] text-xs mt-3 font-mono">
-          drag to rotate · scroll to zoom · click a pin to preview
+          drag to rotate · scroll to zoom · click a pin to check it out!
         </p>
       </div>
 
