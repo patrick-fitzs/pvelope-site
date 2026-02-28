@@ -25,7 +25,7 @@ export default async function TravelPostPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="max-w-8xl mx-auto px-6 md:px-10 py-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-12">
         <Link href="/travels" className="text-[#555] hover:text-[#00ffe7] transition text-sm font-mono mb-8 inline-block">
           ← Back to Travels
         </Link>

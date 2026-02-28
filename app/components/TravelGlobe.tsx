@@ -28,7 +28,7 @@ type Props = {
 export default function TravelGlobe({ locations, onPinClick }: Props) {
   const globeRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [dimensions, setDimensions] = useState({ width: 800, height: 520 });
+  const [dimensions, setDimensions] = useState({ width: 800, height: 650 });
 
   const arcs: ArcData[] = locations.slice(0, -1).map((loc, i) => ({
     startLat: loc.lat,
@@ -53,7 +53,7 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
   useEffect(() => {
     const update = () => {
       if (containerRef.current) {
-        setDimensions({ width: containerRef.current.offsetWidth, height: 520 });
+        setDimensions({ width: containerRef.current.offsetWidth, height: 650 });
       }
     };
     update();
@@ -65,7 +65,7 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
     <div
       ref={containerRef}
       className="w-full rounded-2xl overflow-hidden border border-[#00ffe7]/30 bg-[#0a0a0f]"
-      style={{ height: "520px" }}
+      style={{ height: "650px" }}
     >
       <Globe
         ref={globeRef}

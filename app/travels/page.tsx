@@ -75,7 +75,7 @@ export default function TravelsPage() {
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto mb-16">
+      <div className="max-w-6xl mx-auto mb-16">
         <TravelGlobe
           locations={travelPosts}
           onPinClick={(loc) => setSelected(loc)}
