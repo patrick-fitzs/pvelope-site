@@ -45,6 +45,48 @@ export const travelPosts: TravelPost[] = [
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772210742/DJI_20250821000756_0022_D_fhrq9g.jpg"},
     ]
   },
+    {
+    slug: "California",
+    city: "California",
+    country: "USA",
+    date: "",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+      {
+    slug: "San-Francisco",
+    city: "San Francisco",
+    country: "USA",
+    date: "",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+            {
+    slug: "Canada",
+    city: "Vancouver/ Banff",
+    country: "Canada",
+    date: "",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
       {
     slug: "Vietnam",
     city: "Hanoi",
@@ -136,34 +178,7 @@ export const travelPosts: TravelPost[] = [
         { url: "",},
     ]
   },
-      {
-    slug: "California",
-    city: "California",
-    country: "USA",
-    date: "",
-    thumbnail: "",
-    lat: 0,
-    lng: 0,
-    summary: "",
-    description: "Updating soon.",
-    photos: [
-        { url: "",},
-    ]
-  },
-      {
-    slug: "San-Francisco",
-    city: "San Francisco",
-    country: "USA",
-    date: "",
-    thumbnail: "",
-    lat: 0,
-    lng: 0,
-    summary: "",
-    description: "Updating soon.",
-    photos: [
-        { url: "",},
-    ]
-  },
+
         {
     slug: "Ireland",
     city: "All over",
@@ -178,10 +193,53 @@ export const travelPosts: TravelPost[] = [
         { url: "",},
     ]
   },
+  {
+    slug: "Barcelona",
+    city: "Barcelona",
+    country: "Spain",
+    date: "2024~",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+          {
+    slug: "Andorra",
+    city: "Andorra la Vella",
+    country: "Andorra",
+    date: "2024~",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+  {
+    slug: "Copenhagen",
+    city: "Copenhagen",
+    country: "Denmark",
+    date: "2024~",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+
         {
-    slug: "Canada",
-    city: "Vancouver/ Banff",
-    country: "Canada",
+    slug: "Cotswold",
+    city: "Cotswold",
+    country: "England",
     date: "",
     thumbnail: "",
     lat: 0,
@@ -192,10 +250,108 @@ export const travelPosts: TravelPost[] = [
         { url: "",},
     ]
   },
-        {
-    slug: "/",
-    city: "",
-    country: "",
+          {
+    slug: "Amsterdam-nye",
+    city: "Amsterdam",
+    country: "Netherlands",
+    date: "December 2024",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+          {
+    slug: "Budapest",
+    city: "Budapest",
+    country: "Hungary",
+    date: "",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+          {
+    slug: "Chernobyl",
+    city: "Chernobyl",
+    country: "Ukraine",
+    date: "",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+          {
+    slug: "Vienna",
+    city: "Vienna",
+    country: "Austria",
+    date: "",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+          {
+    slug: "Santorini-travels",
+    city: "Oia",
+    country: "Greece",
+    date: "",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+          {
+    slug: "Athens",
+    city: "Athens",
+    country: "Greece",
+    date: "",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+          {
+    slug: "Dubrovnik",
+    city: "Dubrovnik",
+    country: "Croatia",
+    date: "",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+        { url: "",},
+    ]
+  },
+          {
+    slug: "Split",
+    city: "Split",
+    country: "Croatia",
     date: "",
     thumbnail: "",
     lat: 0,
