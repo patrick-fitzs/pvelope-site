@@ -1,6 +1,7 @@
 export type TravelPhoto = {
   url: string;       // Cloudinary URL
   caption?: string;
+  type? : "image" | "video";
 };
 
 export type TravelPost = {
@@ -16,7 +17,7 @@ export type TravelPost = {
   photos: TravelPhoto[];
 };
 
-// ─── ADD YOUR TRIPS HERE ──────────────────────────────────────────────────────
+// all my trips here
 export const travelPosts: TravelPost[] = [
 
   {
@@ -100,6 +101,7 @@ export const travelPosts: TravelPost[] = [
     description: "Stops: Hanoi -> Hạ Long Bay -> Hà Giang Loop -> Hanoi -> Da Nang -> Ho Chi Minh City. Far, green, long, bikes.",
     photos: [
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289609/IMG_4510_liqmzd.jpg"},
+      { url: "https://res.cloudinary.com/do4ze8iv8/video/upload/v1772289607/IMG_4065_z5mrp8.mp4", type: "video"},
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289605/IMG_2620_dga4ua.jpg"},
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289606/IMG_3984_mjnnky.jpg"},
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289606/IMG_4131_uaeyoo.jpg"},
@@ -107,7 +109,6 @@ export const travelPosts: TravelPost[] = [
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289607/IMG_4258_igjakb.jpg"},
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289606/IMG_4187_mmpbjq.jpg"},
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289607/IMG_4360_stcxnh.jpg"},
-      { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289608/IMG_4373_gdsdp1.jpg"},
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289608/IMG_4373_gdsdp1.jpg"},
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289608/IMG_4403_zxfw7k.jpg"},
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289608/IMG_4424_bdhmmh.jpg"},

@@ -41,7 +41,19 @@ export default async function TravelPostPage({ params }: Props) {
             <div className="columns-1 md:columns-2 gap-4 space-y-4 mb-16">
               {post.photos.map((photo, i) => (
                 <div key={i} className="break-inside-avoid">
-                  <img src={photo.url} alt={photo.caption ?? `${post.city} photo ${i + 1}`} className="w-full rounded-xl object-cover hover:opacity-90 transition" />
+                  {photo.type === "video" ? (
+                    <video
+                      controls
+                      muted
+                      loop
+                      playsInline
+                      className="w-full rounded-xl hover:opacity-90 transition"
+                    >
+                      <source src={photo.url} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img src={photo.url} alt={photo.caption ?? `${post.city} photo ${i + 1}`} className="w-full rounded-xl object-cover hover:opacity-90 transition" />
+                  )}
                   {photo.caption && <p className="text-xs text-[#555] mt-2 font-mono text-center">{photo.caption}</p>}
                 </div>
               ))}
