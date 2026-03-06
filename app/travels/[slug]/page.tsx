@@ -41,6 +41,7 @@ export default async function TravelPostPage({ params }: Props) {
             <div className="columns-1 md:columns-2 gap-4 space-y-4 mb-16">
               {post.photos.map((photo, i) => (
                 <div key={i} className="break-inside-avoid">
+                  {/* video playiong here*/}
                   {photo.type === "video" ? (
                     <video
                       controls
