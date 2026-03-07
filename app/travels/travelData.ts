@@ -133,6 +133,21 @@ export const travelPosts: TravelPost[] = [
       { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/v1772289614/IMG_5685_su626d.jpg"},
     ]
   },
+      // Liechtenstein
+    {
+    slug: "Liechtenstein",
+    city: "Vaduz",
+    country: "Liechtenstein",
+    date: "October 2023",
+    thumbnail: "",
+    lat: 0,
+    lng: 0,
+    summary: "",
+    description: "Updating soon.",
+    photos: [
+      { url: "",},
+    ]
+    },
     // Switzerland
     {
     slug: "Switzerland",
