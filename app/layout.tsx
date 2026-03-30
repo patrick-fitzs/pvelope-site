@@ -12,6 +12,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Patrick's Portfolio",
   description: "Patrick Fitzsimons — Software Engineer",
+  icons: {
+    icon: '/imgdumpster/pf_favicon.svg',
+  },
 };
 
 export default function RootLayout({
