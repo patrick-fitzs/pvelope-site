@@ -71,7 +71,7 @@ export default function TravelsPage() {
         <h1 className="text-5xl font-extrabold text-[#00ffe7] mb-4">Travels</h1>
         <p className="text-[#b2ffe9] text-lg max-w-xl mx-auto">
           Places I&apos;ve been, photos I&apos;ve taken.
-          Click a pin to explore.
+
         </p>
       </div>
 
@@ -81,7 +81,7 @@ export default function TravelsPage() {
           onPinClick={(loc) => setSelected(loc)}
         />
         <p className="text-center text-[#444] text-xs mt-3 font-mono">
-          drag to rotate · scroll to zoom · click a pin to check it out!
+          drag to rotate · scroll to zoom
         </p>
       </div>
 

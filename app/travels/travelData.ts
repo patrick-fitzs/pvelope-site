@@ -51,13 +51,19 @@ export const travelPosts: TravelPost[] = [
     city: "California",
     country: "USA",
     date: "",
-    thumbnail: "",
+    thumbnail: "https://res.cloudinary.com/do4ze8iv8/image/upload/q_auto,f_auto/v1775984528/WhatsApp_Image_2026-04-12_at_09.56.46_i4ipfv.jpg",
     lat: 36.7783,
     lng: -119.4179,
     summary: "",
     description: "Updating soon.",
     photos: [
-      { url: "" },
+        { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/q_auto,f_auto/v1775984529/WhatsApp_Image_2026-04-12_at_09.56.46_1_k3ufvc.jpg" },
+      { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/q_auto,f_auto/v1775984530/WhatsApp_Image_2026-04-12_at_09.56.46_4_qep4c9.jpg" },
+      { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/q_auto,f_auto/v1775984531/WhatsApp_Image_2026-04-12_at_09.56.46_5_byz3e3.jpg" },
+      { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/q_auto,f_auto/v1775984529/WhatsApp_Image_2026-04-12_at_09.56.46_2_qeayi9.jpg" },
+      { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/q_auto,f_auto/v1775984529/WhatsApp_Image_2026-04-12_at_09.56.46_3_rbvn7g.jpg" },
+      { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/q_auto,f_auto/v1775984528/WhatsApp_Image_2026-04-12_at_09.56.46_i4ipfv.jpg" },
+      { url: "https://res.cloudinary.com/do4ze8iv8/image/upload/q_auto,f_auto/v1775984532/WhatsApp_Image_2026-04-12_at_09.56.46_6_oapfo1.jpg" },
     ]
   },
   {
