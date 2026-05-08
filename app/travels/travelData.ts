@@ -179,6 +179,7 @@ export const travelPosts: TravelPost[] = [
     photos: [
         { url: "" },
         { url: "" },
+        { url: "" }
     ]
   },
   {
