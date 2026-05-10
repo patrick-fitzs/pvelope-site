@@ -160,32 +160,36 @@ export default function Home() {
         <section id="intro" className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-10 py-10">
           <div className="intro-card flex flex-col md:flex-row items-center gap-10 bg-gradient-to-br from-[#141e30] via-[#232323] to-[#00ffe7]/10 rounded-xl shadow-2xl p-8">
             <img
-              src="/imgdumpster/me.png"
-              alt="Patrick"
-              className="intro-photo w-44 h-44 rounded-full border-4 border-[#00ffe7] shadow-lg object-cover mb-6 md:mb-0"
+                src="/imgdumpster/me.png"
+                alt="Patrick"
+                className="intro-photo w-44 h-44 rounded-full border-4 border-[#00ffe7] shadow-lg object-cover mb-6 md:mb-0"
             />
             <div className="max-w-xl text-left">
               <h1 className="text-5xl font-extrabold mb-4 text-[#00ffe7] drop-shadow-md">Hey, I&apos;m Patrick!</h1>
               <p className="mb-4 text-lg text-[#e0e0e0]">...and this is my personal website.</p>
               <p className="mb-4 text-[#e0e0e0]">
                 It&apos;s a project that is constantly changing and being fine tuned.
-                I&apos;m currently studying a BSc in Data Science and Computing{" "}
-                <span className="font-semibold text-[#00ffe7]">[Year 3]</span>,
-                and have been working as a backend developer across multiple companies since late 2025.
+                I&apos;ve completed a BSc in Data Science and Computing at Birkbeck, and I&apos;m joining{" "}
+                <span className="font-semibold text-[#00ffe7]">King&apos;s College London</span>{" "}
+                in September to study MSc Computational Finance.
               </p>
               <p className="mb-4 text-[#e0e0e0]">
-                I&apos;ve shipped production backend systems using Node.js, NestJS, and TypeScript, building APIs for payment,
-                vendor, and order workflows, handling Stripe integrations, and working across PostgreSQL and Firestore.
-                I&apos;ve also done full database migrations, redesigning schemas and writing custom data transformation scripts from scratch.
+                I&apos;ve gained hands-on experience across backend engineering, data engineering, and production software delivery,
+                working across real environments and personal projects.
               </p>
               <p className="mb-4 text-[#e0e0e0]">
-                Earlier I designed and deployed ETL pipelines in Python, containerised with Docker and running serverlessly on Google Cloud Functions,
+                In production I&apos;ve shipped backend systems using Node.js, Express, and TypeScript,
+                building and maintaining REST APIs, handling integrations, and working across PostgreSQL databases,
+                including independently executing a full migration from a legacy WordPress system,
+                redesigning the schema and writing custom data transformation scripts from scratch
+              </p>
+              <p className="mb-4 text-[#e0e0e0]">
+                I have also designed and deployed ETL pipelines in Python, containerised with Docker and running on Google Cloud Functions,
                 with CI/CD automated through GitHub Actions.
               </p>
               <p className="mb-4 text-[#e0e0e0]">
-                On the side, I&apos;m developing a stealth product and working on a radar simulation and object detection system in C++ and Python.
+                On the side, I&apos;m building a radar simulation and aerial object detection system in C++ and Python.
               </p>
-              <p className="italic text-[#b2ffe9] mb-2">Work in progress...</p>
               <div className="flex flex-wrap gap-2 mt-4 justify-center md:justify-start">
                 <span className="bg-[#18181b] border border-[#00ffe7] text-[#00ffe7] px-4 py-1 rounded-full font-semibold">Software (and everything tech) Enthusiast 🤖</span>
                 <span className="bg-[#18181b] border border-[#00ffe7] text-[#00ffe7] px-4 py-1 rounded-full font-semibold">Loves Coding challenges 🧑‍💻</span>
@@ -219,8 +223,8 @@ export default function Home() {
             <div className="flex-1">
               <h2 className="text-4xl font-bold mb-6">Skills and Experience</h2>
               <p className="mb-4">
-                I&apos;ve gained hands on experience across full stack development, backend engineering, and data engineering,
-                working across real production environments and personal projects.
+                I&apos;ve gained hands-on experience across backend engineering, data engineering,
+                and production software delivery, working across real environments and personal projects.
               </p>
               <p className="mb-4">
                 On the backend, I&apos;ve built and shipped scalable APIs using Node.js, Express, and NestJS,
