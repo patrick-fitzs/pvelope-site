@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { ACCENT_HEX } from "@/app/accent";
 
 export type TravelLocation = {
   slug: string;
@@ -94,7 +95,7 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
           label: {
             text: loc.city,
             font: "bold 12px monospace",
-            fillColor: Cesium.Color.fromCssColorString("#00ffe7"),
+            fillColor: Cesium.Color.fromCssColorString(ACCENT_HEX),
             outlineColor: Cesium.Color.BLACK,
             outlineWidth: 2,
             style: Cesium.LabelStyle.FILL_AND_OUTLINE,
@@ -117,7 +118,7 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
             width: 2,
             material: new Cesium.PolylineGlowMaterialProperty({
               glowPower: 0.3,
-              color: Cesium.Color.fromCssColorString("#00ffe7"),
+              color: Cesium.Color.fromCssColorString(ACCENT_HEX),
             }),
           },
         });
@@ -151,14 +152,14 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
 
   return (
     <div
-      className="w-full rounded-2xl overflow-hidden border border-[#00ffe7]/30"
+      className="w-full overflow-hidden rounded-2xl border border-[color:color-mix(in_srgb,var(--accent)_30%,transparent)]"
       style={{ height: "650px", position: "relative", background: "#0a0a0f" }}
     >
       <div ref={containerRef} style={{ width: "100%", height: "100%" }} />
       <div style={{
         position: "absolute", bottom: 12, left: "50%",
         transform: "translateX(-50%)",
-        color: "rgba(0,255,231,0.5)", fontFamily: "monospace",
+        color: "rgba(184, 154, 79, 0.55)", fontFamily: "monospace",
         fontSize: "12px", pointerEvents: "none", whiteSpace: "nowrap",
       }}>
         drag to rotate · scroll to zoom · click a pin to check it out!
@@ -169,7 +170,7 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
 
 function getPinImage(): string {
   const svg = `<svg width="28" height="38" viewBox="0 0 28 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M14 0C6.27 0 0 6.27 0 14C0 24.5 14 38 14 38C14 38 28 24.5 28 14C28 6.27 21.73 0 14 0Z" fill="#00ffe7"/>
+    <path d="M14 0C6.27 0 0 6.27 0 14C0 24.5 14 38 14 38C14 38 28 24.5 28 14C28 6.27 21.73 0 14 0Z" fill="${ACCENT_HEX}"/>
     <circle cx="14" cy="14" r="5" fill="#0a0a0f"/>
   </svg>`;
   return `data:image/svg+xml;base64,${btoa(svg)}`;

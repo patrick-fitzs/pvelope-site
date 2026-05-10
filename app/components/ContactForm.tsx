@@ -35,32 +35,32 @@ export default function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="w-full max-w-lg space-y-4 bg-[#18181b]/80 border-2 border-[#00ffe7] rounded-2xl shadow-xl p-8 backdrop-blur-md transition-transform hover:scale-105"
+      className="w-full max-w-lg space-y-4 rounded-2xl border-2 border-[color:color-mix(in_srgb,var(--accent)_45%,transparent)] bg-[#18181b]/80 p-8 shadow-xl backdrop-blur-md transition-transform hover:scale-105"
     >
       <input
         type="text"
         name="name"
         placeholder="Your Name"
-        className="w-full p-3 rounded bg-[#23272f] text-white border border-[#00ffe7] focus:outline-none focus:ring-2 focus:ring-[#00ffe7]"
+        className="w-full rounded border border-[color:color-mix(in_srgb,var(--accent)_40%,transparent)] bg-[#23272f] p-3 text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         required
       />
       <input
         type="email"
         name="email"
         placeholder="Your Email"
-        className="w-full p-3 rounded bg-[#23272f] text-white border border-[#00ffe7] focus:outline-none focus:ring-2 focus:ring-[#00ffe7]"
+        className="w-full rounded border border-[color:color-mix(in_srgb,var(--accent)_40%,transparent)] bg-[#23272f] p-3 text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         required
       />
       <textarea
         name="message"
         placeholder="Your Message"
         rows={5}
-        className="w-full p-3 rounded bg-[#23272f] text-white border border-[#00ffe7] focus:outline-none focus:ring-2 focus:ring-[#00ffe7]"
+        className="w-full rounded border border-[color:color-mix(in_srgb,var(--accent)_40%,transparent)] bg-[#23272f] p-3 text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         required
       />
       <button
         type="submit"
-        className="bg-[#00ffe7] text-black px-6 py-3 rounded hover:bg-[#03fff7] hover:scale-105 transition"
+        className="rounded bg-[var(--accent)] px-6 py-3 text-neutral-900 transition hover:scale-105 hover:brightness-110"
       >
         Send Message
       </button>

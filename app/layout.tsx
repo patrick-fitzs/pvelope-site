@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${jetbrainsMono.variable} font-mono bg-[#0f0f0f] text-[#e0e0e0] overflow-x-hidden`}>
+      <body className={`${jetbrainsMono.variable} font-mono bg-black text-[#e0e0e0] overflow-x-hidden`}>
         <Navbar />
         {children}
         <Analytics />

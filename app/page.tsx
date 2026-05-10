@@ -1,11 +1,7 @@
-import Loader from "./components/Loader";
-import ParticlesBackground from "./components/ParticlesBackground";
 import SkillSphere from "./components/SkillSphere";
 import ContactForm from "./components/ContactForm";
-import Image from "next/image";
-import Link from "next/link";
 
-// ─── Projects data ───────────────────────────────────────────────────────────
+// Projects data ##########################################################
 const projects = [
   {
     img: "/imgdumpster/radar.jpg",
@@ -99,7 +95,7 @@ const projects = [
   },
 ];
 
-// ─── Certificates data ────────────────────────────────────────────────────────
+// Certificates data ##########################################################
 const certs = [
   { img: "/imgdumpster/python_hackerrank_cert.png", title: "Python HackerRank", link: "" },
   { img: "/imgdumpster/genAI_LLM.png", title: "Generative AI and LLMs", link: "https://coursera.org/share/a119faaedd095eedbbef2c305b5b5a51" },
@@ -109,7 +105,10 @@ const certs = [
   { img: "/imgdumpster/pdsai.png", title: "Python for Data Science, AI & Development", link: "https://coursera.org/share/672c25978c0118f228048631493ec9df" },
 ];
 
-// ─── Footer socials ───────────────────────────────────────────────────────────
+// Intro highlights (keep in sync with `.intro-tag` in globals.css)
+const introTags = ["Software & technology", "Coding challenges", "Gym · Travel · Food"] as const;
+
+// Footer socials ##########################################################
 const socials = [
   { href: "https://github.com/patrick-fitzs", src: "https://cdn-icons-png.flaticon.com/512/25/25231.png", alt: "GitHub", invert: true },
   { href: "https://leetcode.com/u/patrickfitzs11/", src: "/imgdumpster/leetcode.svg", alt: "LeetCode" },
@@ -121,10 +120,7 @@ const socials = [
 export default function Home() {
   return (
     <>
-      <Loader />
-      <ParticlesBackground />
-
-      {/* ── Floating social icons ── */}
+      {/* Github icon */}
       <div className="fixed top-1/2 right-3 -translate-y-1/2 flex flex-col space-y-5 z-[1000]">
         <div className="relative group">
           <a href="https://github.com/patrick-fitzs" target="_blank" rel="noreferrer">
@@ -134,6 +130,7 @@ export default function Home() {
             Github
           </span>
         </div>
+        {/*  LinkedIn icon  */}
         <div className="relative group">
           <a href="https://www.linkedin.com/in/patrick-fitzsimons-243012253/" target="_blank" rel="noreferrer">
             <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" className="w-8 h-8 hover:scale-125 transition-transform" />
@@ -144,7 +141,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── CV button ── */}
+      {/*CV button*/}
       <div className="fixed top-20 right-3 z-[1000] group">
         <a href="/imgdumpster/PatricksCV.pdf" download className="relative inline-block bg-gray-800 p-3 rounded-full shadow-md hover:scale-110 transition-transform">
           <img src="/imgdumpster/resume.gif" alt="CV Icon" className="w-9 h-9 rounded-full object-cover" />
@@ -156,69 +153,99 @@ export default function Home() {
 
       <main className="pt-16">
 
-        {/* ── INTRO ── */}
-        <section id="intro" className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-10 py-10">
-          <div className="intro-card flex flex-col md:flex-row items-center gap-10 bg-gradient-to-br from-[#141e30] via-[#232323] to-[#00ffe7]/10 rounded-xl shadow-2xl p-8">
-            <img
-                src="/imgdumpster/me.png"
+        {/*  INTRO  */}
+        <section
+          id="intro"
+          className="flex w-full flex-col items-center justify-start px-4 pt-14 pb-16 sm:px-8 sm:pb-20 sm:pt-20 md:px-10 md:pb-24 md:pt-24 lg:px-14 lg:pt-28"
+        >
+          <div className="flex w-full max-w-[90rem] flex-col items-center gap-10 md:flex-row md:items-start md:justify-start md:gap-12 lg:gap-16">
+            <div className="intro-photo-wrap shrink-0 p-1 md:-ml-2 lg:-ml-6 xl:-ml-10">
+              <img
+                src="/imgdumpster/image.png"
                 alt="Patrick"
-                className="intro-photo w-44 h-44 rounded-full border-4 border-[#00ffe7] shadow-lg object-cover mb-6 md:mb-0"
-            />
-            <div className="max-w-xl text-left">
-              <h1 className="text-5xl font-extrabold mb-4 text-[#00ffe7] drop-shadow-md">Hey, I&apos;m Patrick!</h1>
-              <p className="mb-4 text-lg text-[#e0e0e0]">...and this is my personal website.</p>
-              <p className="mb-4 text-[#e0e0e0]">
-                It&apos;s a project that is constantly changing and being fine tuned.
-                I&apos;ve completed a BSc in Data Science and Computing at Birkbeck, and I&apos;m joining{" "}
-                <span className="font-semibold text-[#00ffe7]">King&apos;s College London</span>{" "}
-                in September to study MSc Computational Finance.
-              </p>
-              <p className="mb-4 text-[#e0e0e0]">
-                I&apos;ve gained hands-on experience across backend engineering, data engineering, and production software delivery,
-                working across real environments and personal projects.
-              </p>
-              <p className="mb-4 text-[#e0e0e0]">
-                In production I&apos;ve shipped backend systems using Node.js, Express, and TypeScript,
-                building and maintaining REST APIs, handling integrations, and working across PostgreSQL databases,
-                including independently executing a full migration from a legacy WordPress system,
-                redesigning the schema and writing custom data transformation scripts from scratch
-              </p>
-              <p className="mb-4 text-[#e0e0e0]">
-                I have also designed and deployed ETL pipelines in Python, containerised with Docker and running on Google Cloud Functions,
-                with CI/CD automated through GitHub Actions.
-              </p>
-              <p className="mb-4 text-[#e0e0e0]">
-                On the side, I&apos;m building a radar simulation and aerial object detection system in C++ and Python.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4 justify-center md:justify-start">
-                <span className="bg-[#18181b] border border-[#00ffe7] text-[#00ffe7] px-4 py-1 rounded-full font-semibold">Software (and everything tech) Enthusiast 🤖</span>
-                <span className="bg-[#18181b] border border-[#00ffe7] text-[#00ffe7] px-4 py-1 rounded-full font-semibold">Loves Coding challenges 🧑‍💻</span>
-                <span className="bg-[#232323] text-[#00ffe7] px-4 py-1 rounded-full font-semibold">Gym 🏋️ | Travel 🌏 | Foodie 🍗 <span className="text-xs">(Who isn&apos;t)</span></span>
+                className="intro-photo block h-64 w-64 object-cover rounded-2xl sm:h-72 sm:w-72 md:h-96 md:w-96 lg:h-[28rem] lg:w-[28rem]"
+              />
+            </div>
+            <div className="min-w-0 max-w-2xl flex-1 max-md:w-full space-y-4 pt-0 text-left text-lg text-[#e0e0e0] max-md:mx-auto max-md:text-center md:max-w-4xl md:pt-2 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
+              <h1 className="max-md:text-center md:text-left text-5xl font-extrabold tracking-tight text-[var(--accent)]">
+                Hey, I&apos;m Patrick!
+              </h1>
+              <div className="intro-prose space-y-4 max-md:text-center md:text-justify">
+                <p>...and this is my personal website.</p>
+                <p>
+                  It&apos;s a project that is constantly changing and being fine tuned. I&apos;ve completed a BSc in Data Science
+                  and Computing at Birkbeck, and I&apos;m joining
+                  <span className="accent-emphasis"> King&apos;s College London</span> in September to study 
+                  <span className="accent-emphasis"> MSc Computational Finance.</span>
+                  
+                </p>
+                <p>
+                  I&apos;ve gained hands-on experience across backend engineering, data engineering, and production software
+                  delivery, working across real environments and personal projects.
+                </p>
+                <p>
+                  In production I&apos;ve shipped backend systems using Node.js, Express, and TypeScript, building and maintaining
+                  REST APIs, handling integrations, and working across PostgreSQL databases, including independently executing a
+                  full migration from a legacy WordPress system, redesigning the schema and writing custom data transformation
+                  scripts from scratch.
+                </p>
+                <p>
+                  I have also designed and deployed ETL pipelines in Python, containerised with Docker and running on Google Cloud
+                  Functions, with CI/CD automated through GitHub Actions.
+                </p>
+                <p>On the side, I&apos;m building a radar simulation and aerial object detection system in C++ and Python.</p>
+              </div>
+              <div className="intro-tags">
+                {introTags.map((label) => (
+                  <span key={label} className="intro-tag">
+                    {label}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── SPARE TIME ── */}
-        <section id="sidestep" className="min-h-[80vh] flex flex-col justify-center items-center px-10 sm:px-16 md:px-24 py-10 text-center text-[#e0e0e0]">
+        {/*  SPARE TIME  */}
+        <section id="sidestep" className="flex flex-col items-center justify-start px-10 sm:px-16 md:px-24 pt-12 sm:pt-16 md:pt-20 pb-16 text-center text-[#e0e0e0]">
           <h2 className="text-3xl font-bold mb-4">What I like to do in my spare time</h2>
-          <a href="https://leetcode.com/u/patrickfitzs11/" target="_blank" rel="noreferrer">
+          <a href="https://github.com/patrick-fitzs/LeetCode" target="_blank" rel="noreferrer">
             <img src="/imgdumpster/leetcode.svg" alt="leetcode" className="w-12 h-12 hover:scale-110 transition-transform mx-auto" />
           </a>
           <p className="my-4">Yes, LeetCode. A seemingly integral part of every aspiring developer&apos;s life 🤷‍♂️</p>
           <p className="mb-2">I have a constant building list of LeetCode solutions here with crispy comments and O(1) wherever possible.</p>
-          <a href="https://github.com/patrick-fitzs/LeetCode" target="_blank" rel="noreferrer" className="view-repo">View Solutions</a>
+          <a href="https://github.com/patrick-fitzs/LeetCode" target="_blank" rel="noreferrer" className="view-repo">
+            View Solutions
+          </a>
           <h3 className="mt-6 font-semibold text-lg">That&apos;s not all.....</h3>
           <div className="flex flex-wrap justify-center gap-6 mt-4">
-            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmx4MXRoNzhvcXlsM2J3ODZnNmRkazg1ZnFoZ2IxaXcxOXkzOTlkMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lOqNS2HUyN8OJV0CuF/giphy.gif" className="gif-hover w-64 h-64 object-cover rounded-lg shadow" alt="gym" />
-            <img src="https://media.giphy.com/media/3QCbTgfXMk7SCMTmsn/giphy.gif" className="gif-hover w-64 h-64 object-cover rounded-lg shadow" alt="travel" />
-            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzh0b3psbnBpamgyNTEzYzFnbGowaGRhNjZtMndlMnY0bW40Y3FzdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XnVUazmKKpEfrX4uC4/giphy.gif" className="gif-hover w-64 h-64 object-cover rounded-lg shadow" alt="food" />
+            <img
+              src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmx4MXRoNzhvcXlsM2J3ODZnNmRkazg1ZnFoZ2IxaXcxOXkzOTlkMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lOqNS2HUyN8OJV0CuF/giphy.gif"
+              className="gif-hover w-64 h-64 object-cover rounded-lg shadow"
+              alt="gym"
+            />
+            <img
+              src="https://media.giphy.com/media/3QCbTgfXMk7SCMTmsn/giphy.gif"
+              className="gif-hover w-64 h-64 object-cover rounded-lg shadow"
+              alt="travel"
+            />
+            <img
+              src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzh0b3psbnBpamgyNTEzYzFnbGowaGRhNjZtMndlMnY0bW40Y3FzdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XnVUazmKKpEfrX4uC4/giphy.gif"
+              className="gif-hover w-64 h-64 object-cover rounded-lg shadow"
+              alt="food"
+            />
           </div>
-          <p className="mt-4">P.s.... gym, travel, and eat food (of course).</p>
+          <p className="mt-4">
+            P.s.... gym, travel (check this out{" "}
+            <a href="/travels" className="text-[var(--accent)] underline-offset-2 hover:underline">
+              here
+            </a>
+            ), and eat food (of course).
+          </p>
         </section>
 
-        {/* ── SKILLS & EXPERIENCE ── */}
-        <section id="skills-experience" className="min-h-[80vh] px-10 sm:px-16 md:px-24 py-12 flex items-center justify-center text-[#e0e0e0]">
+        {/*  SKILLS & EXPERIENCE */}
+        <section id="skills-experience" className="min-h-[80vh] px-10 sm:px-16 md:px-24 py-16 md:py-20 flex items-center justify-center text-[#e0e0e0]">
           <div className="flex flex-wrap lg:flex-nowrap gap-12 w-full max-w-7xl">
             <div className="flex-1">
               <h2 className="text-4xl font-bold mb-6">Skills and Experience</h2>
@@ -250,11 +277,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── PROJECTS ── */}
+        {/*  PROJECTS  */}
         <section id="projects" className="px-8 md:px-20 py-12 text-center text-[#e0e0e0]">
           <h2 className="text-3xl font-bold mb-6">My Projects</h2>
           <div className="max-w-6xl mx-auto">
             <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-start">
+
               {projects.map((p) => (
                 <div key={p.title} className="project-card bg-[#1e1e1e] rounded-2xl shadow-md group relative overflow-hidden p-4 md:p-6 w-full">
                   <div className="relative w-full aspect-[16/9] md:aspect-[4/3]">
@@ -262,10 +290,13 @@ export default function Home() {
                     <div className="absolute inset-0 bg-black bg-opacity-70 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md px-6 text-center">
                       <p className="italic mb-3 text-base">{p.desc}</p>
                       {p.repo !== "#" && (
-                        <a href={p.repo} target="_blank" rel="noreferrer" className="text-[#00ffe7] hover:underline">View Repo</a>
+                        <a href={p.repo} target="_blank" rel="noreferrer" className="text-[var(--accent)] hover:underline">
+                          View Repo
+                        </a>
                       )}
                     </div>
                   </div>
+
                   <h3 className="text-xl font-semibold mt-5">{p.title}</h3>
                   <div className="flex flex-wrap gap-2 mt-2 mb-2 justify-center">
                     {p.tags.map((t) => (
@@ -278,25 +309,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── CERTIFICATES ── */}
+        {/*  CERTIFICATES  */}
         <section id="certificates" className="w-full mt-10 py-14 flex flex-col items-center bg-[#181818]">
-          <h2 className="text-3xl font-bold mb-10 text-[#00ffe7]">Certificates</h2>
+          <h2 className="mb-10 text-3xl font-bold text-[var(--accent)]">Certificates</h2>
           <div className="w-full max-w-5xl px-4">
             <div className="grid gap-6 md:grid-cols-3">
               {certs.map((c) => (
                 <div key={c.title} className="cert-slide flex flex-col items-center bg-[#232323] rounded-xl p-4 shadow-lg cursor-pointer">
                   <img src={c.img} className="w-44 h-32 object-contain mb-3" alt={c.title} />
                   <div className="text-lg font-semibold mt-2 mb-1 text-[#e0e0e0] text-center">{c.title}</div>
-                  {c.link && (
-                    <a href={c.link} target="_blank" rel="noreferrer" className="text-[#00ffe7] text-sm hover:underline">View Certificate</a>
-                  )}
+                  {c.link ? (
+                    <a href={c.link} target="_blank" rel="noreferrer" className="text-sm text-[var(--accent)] hover:underline">
+                      View Certificate
+                    </a>
+                  ) : null}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── CONTACT ── */}
+        {/*  CONTACT  */}
         <section id="contact" className="min-h-[80vh] flex flex-col items-center justify-center px-10 sm:px-16 md:px-24 py-12 text-center text-[#e0e0e0]">
           <h2 className="text-3xl font-bold mb-6">Let&apos;s Connect!</h2>
           <ContactForm />
@@ -304,10 +337,12 @@ export default function Home() {
 
       </main>
 
-      {/* ── FOOTER ── */}
+      {/*  FOOTER  */}
       <footer className="bg-black w-full py-6 flex flex-col items-center justify-center">
         <div className="flex gap-6 mb-2 items-center flex-wrap justify-center">
-          <h2 className="text-[#e0e0e0]">Other socials here: <span className="text-[#00ffe7]">➔</span></h2>
+          <h2 className="text-[#e0e0e0]">
+            Other socials here: <span className="text-[var(--accent)]" aria-hidden="true">→</span>
+          </h2>
           {socials.map((s) => (
             <a key={s.alt} href={s.href} target="_blank" rel="noreferrer" title={s.alt}>
               <img

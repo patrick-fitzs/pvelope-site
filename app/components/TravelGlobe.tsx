@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import Globe from "react-globe.gl";
+import { ACCENT_HEX } from "@/app/accent";
 
 export type TravelLocation = {
   slug: string;
@@ -64,7 +65,7 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
   return (
     <div
       ref={containerRef}
-      className="w-full rounded-2xl overflow-hidden border border-[#00ffe7]/30 bg-[#0a0a0f]"
+      className="w-full overflow-hidden rounded-2xl border border-[color:color-mix(in_srgb,var(--accent)_30%,transparent)] bg-[#0a0a0f]"
       style={{ height: "650px" }}
     >
       <Globe
@@ -83,9 +84,9 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
           const el = document.createElement("div");
           el.style.cssText = "cursor:pointer;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-100%);";
           el.innerHTML = `
-            <div style="background:rgba(0,0,0,0.85);border:1px solid #00ffe7;border-radius:6px;padding:3px 7px;color:#00ffe7;font-family:monospace;font-size:11px;font-weight:bold;white-space:nowrap;margin-bottom:2px;">${loc.city}</div>
+            <div style="background:rgba(0,0,0,0.85);border:1px solid ${ACCENT_HEX};border-radius:6px;padding:3px 7px;color:${ACCENT_HEX};font-family:monospace;font-size:11px;font-weight:bold;white-space:nowrap;margin-bottom:2px;">${loc.city}</div>
             <svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 0C4.48 0 0 4.48 0 10C0 17.5 10 28 10 28C10 28 20 17.5 20 10C20 4.48 15.52 0 10 0Z" fill="#00ffe7"/>
+              <path d="M10 0C4.48 0 0 4.48 0 10C0 17.5 10 28 10 28C10 28 20 17.5 20 10C20 4.48 15.52 0 10 0Z" fill="${ACCENT_HEX}"/>
               <circle cx="10" cy="10" r="4" fill="#0f0f0f"/>
             </svg>
           `;
@@ -94,7 +95,7 @@ export default function TravelGlobe({ locations, onPinClick }: Props) {
         }}
         // Arcs between cities
         arcsData={arcs}
-        arcColor={() => ["#00ffe7", "#00ffe7"]}
+        arcColor={() => [ACCENT_HEX, ACCENT_HEX]}
         arcDashLength={0.4}
         arcDashGap={0.2}
         arcDashAnimateTime={2000}

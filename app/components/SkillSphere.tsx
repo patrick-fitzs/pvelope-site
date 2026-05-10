@@ -34,7 +34,7 @@ export default function SkillSphere() {
   return (
     <div
       id="skillSphere"
-      className="flex-1 h-[400px] flex items-center justify-center text-[#00ffe7] text-lg"
+      className="flex h-[600px] flex-1 items-center justify-center text-lg text-[var(--accent)]"
     />
   );
 }

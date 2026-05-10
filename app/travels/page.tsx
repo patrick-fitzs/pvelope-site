@@ -27,12 +27,12 @@ function LocationPopup({
     >
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
       <div
-        className="relative z-10 bg-[#1a1a1a] border border-[#00ffe7]/40 rounded-2xl p-6 max-w-sm w-full shadow-2xl"
+        className="relative z-10 w-full max-w-sm rounded-2xl border border-[color:color-mix(in_srgb,var(--accent)_40%,transparent)] bg-[#1a1a1a] p-6 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-4 text-[#555] hover:text-[#00ffe7] text-xl transition"
+          className="absolute top-3 right-4 text-xl text-[#555] transition hover:text-[var(--accent)]"
         >✕</button>
 
         {location.thumbnail && (
@@ -43,14 +43,14 @@ function LocationPopup({
           />
         )}
 
-        <h3 className="text-2xl font-bold text-[#00ffe7]">{location.city}</h3>
+        <h3 className="text-2xl font-bold text-[var(--accent)]">{location.city}</h3>
         <p className="text-sm text-[#777] mb-3">{location.country} · {location.date}</p>
         <p className="text-[#e0e0e0] text-sm mb-4">{location.summary}</p>
 
         {location.slug !== "example" && (
           <Link
             href={`/travels/${location.slug}`}
-            className="inline-block bg-[#00ffe7] text-black font-bold px-4 py-2 rounded-lg hover:bg-[#03fff7] transition text-sm"
+            className="inline-block rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-bold text-neutral-900 transition hover:brightness-110"
           >
             View full post →
           </Link>
@@ -68,8 +68,8 @@ export default function TravelsPage() {
     <main className="pt-24 min-h-screen px-6 md:px-20 text-[#e0e0e0]">
 
       <div className="text-center mb-12">
-        <h1 className="text-5xl font-extrabold text-[#00ffe7] mb-4">Travels</h1>
-        <p className="text-[#b2ffe9] text-lg max-w-xl mx-auto">
+        <h1 className="mb-4 text-5xl font-extrabold text-[var(--accent)]">Travels</h1>
+        <p className="mx-auto max-w-xl text-lg text-[color-mix(in_srgb,var(--accent)_50%,#94a3b8)]">
           Places I&apos;ve been, photos I&apos;ve taken.
 
         </p>
@@ -94,7 +94,7 @@ export default function TravelsPage() {
                   <img src={post.thumbnail} alt={post.city} className="w-full h-52 object-cover" />
                 )}
                 <div className="p-5">
-                  <h3 className="text-xl font-bold text-[#00ffe7]">{post.city}</h3>
+                  <h3 className="text-xl font-bold text-[var(--accent)]">{post.city}</h3>
                   <p className="text-sm text-[#777] mb-2">{post.country} · {post.date}</p>
                   <p className="text-[#e0e0e0] text-sm">{post.summary}</p>
                 </div>

@@ -1,10 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
 :root {
-  --accent: #00ffe7;
-  --bg: #0f0f0f;
+  --accent: #b89a4f;
+  --bg: #000000;
   --bg2: #1e1e1e;
-  --text: #e0e0e0;
+  --foreground: #e0e0e0;
+}
+
+/* Inline prose emphasis (institutions, keywords) */
+.accent-emphasis {
+  font-weight: 600;
+  color: var(--accent);
 }
 
 html, body {
@@ -15,24 +25,7 @@ html, body {
 body {
   font-family: var(--font-jetbrains), monospace;
   scroll-behavior: smooth;
-  color: var(--text);
-}
-
-/* Loader */
-#loaderStyle {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: #101014;
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  transition: opacity 0.6s;
+  color: var(--foreground);
 }
 
 /* Particles */
@@ -53,7 +46,7 @@ body {
 .nav-icon:hover,
 .nav-icon.active {
   color: var(--accent);
-  text-shadow: 0 0 10px var(--accent);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 /* Skill sphere */
@@ -79,58 +72,56 @@ body {
   }
 }
 
-/* Intro card */
-.intro-card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-  border: 1px solid rgba(0, 255, 231, 0.18);
+/* Intro body copy: justified on md+ for an even rag */
+.intro-prose {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  text-wrap: pretty;
 }
-.intro-card::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(0,255,231,0.24), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(59,130,246,0.22), transparent 55%),
-    conic-gradient(from 220deg, rgba(0,255,231,0.0), rgba(0,255,231,0.18), rgba(59,130,246,0.0));
-  opacity: 0;
-  transform: translate3d(0, 20px, 0);
-  filter: blur(12px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
-  pointer-events: none;
-  mix-blend-mode: screen;
+@media (min-width: 768px) {
+  .intro-prose {
+    text-align-last: left;
+  }
 }
-.intro-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.8), 0 0 35px rgba(0,255,231,0.35);
-  border-color: rgba(0,255,231,0.5);
+
+.intro-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.625rem;
+  padding-top: 0.5rem;
+  justify-content: center;
 }
-.intro-card:hover::before {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+@media (min-width: 768px) {
+  .intro-tags {
+    justify-content: flex-start;
+  }
+}
+.intro-tag {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  border-radius: 0.25rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.035);
 }
 
 /* Intro photo */
+.intro-photo-wrap {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+}
 .intro-photo {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform: scale(2);
+  transition: transform 0.7s ease;
 }
 .intro-photo:hover {
-  transform: translateY(-6px) scale(1.06) rotate(-1deg);
-  box-shadow: 0 24px 55px rgba(0,0,0,0.9), 0 0 28px rgba(0,255,231,0.5);
+  transform: scale(1);
 }
-
-/* GIF hover */
-.gif-hover {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: pointer;
-  transform-origin: center;
+@media (prefers-reduced-motion: reduce) {
+  .intro-photo { transition: none; }
 }
-.gif-hover:hover {
-  transform: translateY(-16px) scale(1.3) !important;
-  box-shadow: 0 26px 70px rgba(0,0,0,0.9), 0 0 28px rgba(0,255,231,0.5);
-}
-
 /* Project cards */
 .project-card {
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
@@ -138,8 +129,8 @@ body {
 }
 .project-card:hover {
   transform: translateY(-10px) scale(1.03);
-  border-color: rgba(0,255,231,0.6);
-  box-shadow: 0 26px 70px rgba(0,0,0,0.9), 0 0 35px rgba(0,255,231,0.4);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.9), 0 0 32px color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
 /* Certificate cards */
@@ -154,7 +145,7 @@ body {
   transform: rotateY(-14deg) translateY(-10px) scale(1.06);
   opacity: 1;
   border-color: var(--accent);
-  box-shadow: 0 22px 55px rgba(0,255,231,0.35);
+  box-shadow: 0 22px 55px color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
 /* View repo link */
