@@ -15,6 +15,8 @@ export type TravelPost = {
   summary: string;   // Short blurb shown on card + globe popup
   description: string; // Full text shown on the post page
   photos: TravelPhoto[];
+  /** Optional extra globe pins (same card + `/travels/[slug]`). */
+  mapPins?: { city: string; lat: number; lng: number }[];
 };
 
 // all my trips here
@@ -22,12 +24,16 @@ export const travelPosts: TravelPost[] = [
 
   {
     slug: "Hawaii",
-    city: "Honolulu",
+    city: "Hawaii",
     country: "Hawaii",
     date: "Good times",
     thumbnail: "https://res.cloudinary.com/do4ze8iv8/image/upload/w_800,h_400,c_fill,q_auto,f_auto/v1772210742/DJI_20250821000756_0022_D_fhrq9g.jpg",
     lat: 21.3069,
     lng: -157.8583,
+    mapPins: [
+      { city: "Honolulu", lat: 21.3069, lng: -157.8583 },
+      { city: "Maui", lat: 20.7984, lng: -156.3319 },
+    ],
     summary: "The most recent travel - August 2025.",
     description: "Far, great, sunny, engaged.",
     photos: [

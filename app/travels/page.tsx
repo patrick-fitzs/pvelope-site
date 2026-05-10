@@ -4,12 +4,28 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import type { TravelLocation } from "../components/TravelGlobe";
 
-import { travelPosts} from "@/app/travels/travelData";
+import { travelPosts } from "@/app/travels/travelData";
 
-// Dynamically import globe — disables SSR (Three.js requires browser APIs)
 const TravelGlobe = dynamic(() => import("../components/TravelGlobe"), {
   ssr: false,
 });
+
+type Post = (typeof travelPosts)[number];
+type Pin = NonNullable<Post["mapPins"]>[number];
+
+const globeLocations = (posts: Post[]): TravelLocation[] => {
+  const row = (p: Post, m?: Pin): TravelLocation => ({
+    slug: p.slug,
+    city: m?.city ?? p.city,
+    country: p.country,
+    date: p.date,
+    thumbnail: p.thumbnail,
+    lat: m?.lat ?? p.lat,
+    lng: m?.lng ?? p.lng,
+    summary: p.summary,
+  });
+  return posts.flatMap((p) => (p.mapPins?.length ? p.mapPins.map((m) => row(p, m)) : [row(p)]));
+};
 
 
 
@@ -77,7 +93,7 @@ export default function TravelsPage() {
 
       <div className="max-w-6xl mx-auto mb-16">
         <TravelGlobe
-          locations={travelPosts}
+          locations={globeLocations(travelPosts)}
           onPinClick={(loc) => setSelected(loc)}
         />
         <p className="text-center text-[#444] text-xs mt-3 font-mono">
