@@ -75,8 +75,9 @@ export default function TravelFund() {
 
 
     return (
+
         <main className="min-h-screen p-10 pt-24 flex flex-col items-center">
-            <h1 className="text-white text-2xl mb-6">Stock Analyst Ratings</h1>
+            <h1 className="text-white text-2xl mb-6">Stock Watch</h1>
             <h3 className="text-white mb-6">Maybe your favourite stock can fund your next trip?</h3>
             <p className="mt-6 mb-10"> Have a look at the latest analyst ratings here</p>
 
@@ -91,11 +92,15 @@ export default function TravelFund() {
                 />
                 <button onClick={handleFetch} className="text-white border border-white p-2 rounded px-4"> Search </button>
             </div>
+            <p className="text-sm italic text-gray-600" >** pls... this is not financial advice</p>
 
 
             {/* my stocks to look at section, for now anyway */}
             <div className="mb-10 w-full max-w-7xl">
-                <p className="text-gray-400 text-sm mb-3">Eyes on right now:</p>
+                <div className="flex justify-between items-center mb-3">
+                    <p className="text-gray-400 text-sm">Eyes on right now:</p>
+                    <p className="text-gray-400 text-sm">Click one below for magic</p>
+                </div>
                 <div className="grid grid-cols-3 gap-3">
                     {my_favs_right_now.map(pick => (
                         <button
