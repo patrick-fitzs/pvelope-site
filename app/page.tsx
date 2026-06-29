@@ -143,7 +143,7 @@ export default function Home() {
 
       {/*CV button*/}
       <div className="fixed top-20 right-3 z-[1000] group">
-        <a href="/imgdumpster/PatricksCV.pdf" download className="relative inline-block bg-gray-800 p-3 rounded-full shadow-md hover:scale-110 transition-transform">
+        <a href="/imgdumpster/PatricksCV_26.pdf" download className="relative inline-block bg-gray-800 p-3 rounded-full shadow-md hover:scale-110 transition-transform">
           <img src="/imgdumpster/resume.gif" alt="CV Icon" className="w-9 h-9 rounded-full object-cover" />
           <span className="absolute top-1/2 right-[120%] -translate-y-1/2 bg-black text-white text-sm px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
             Check out my CV here!
